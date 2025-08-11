@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import ResumeButton from "../ResumeButton";
-
+import { Link as ScrollLink } from "react-scroll";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -24,12 +24,12 @@ const Navbar = () => {
   };
 
   // Nav links array
-  const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Skills", href: "#" },
-    { name: "Projects", href: "#" },
-    { name: "Contact", href: "#" },
+ const navLinks = [
+    { name: "Home", to: "home" },
+    { name: "About", to: "about" },
+    { name: "Skills", to: "skills" },
+    { name: "Projects", to: "projects" },
+    { name: "Contact", to: "contact" },
   ];
 
   return (
@@ -73,20 +73,22 @@ const Navbar = () => {
             }}
           >
             {navLinks.map((link) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                className={`px-6 py-3 p-1 rounded-full text-sm font-medium ${
-                  activeLink === link.name
-                    ? "bg-gradient-to-r from-cyan-600/50 to-purple-600/50 text-white"
-                    : "text-white/90 hover:bg-white/5"
-                } transition-colors duration-300`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveLink(link.name)}
-              >
-                {link.name}
-              </motion.a>
+             <ScrollLink
+            key={link.name}
+            to={link.to}
+            smooth={true}
+            duration={500}
+            offset={-70}
+            spy={true}
+            onClick={() => setActiveLink(link.name)}
+            className={`px-4 py-2 rounded-full cursor-pointer ${
+              activeLink === link.name
+                ? "bg-gradient-to-r from-cyan-600/50 to-purple-600/50 text-white"
+                : "text-white/80 hover:bg-white/10"
+            }`}
+          >
+            {link.name}
+          </ScrollLink>
             ))}
           </div>
 
@@ -122,28 +124,28 @@ const Navbar = () => {
               boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
             }}
           >
-            <div className="flex flex-col space-y-2 px-4 py-4">
+            <div className="flex flex-col text-center space-y-2 px-4 py-4">
               {navLinks.map((link) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setActiveLink(link.name);
-                  }}
-                  className={`py-3 px-4 rounded-lg ${
-                    activeLink === link.name
-                      ? "bg-gradient-to-r from-cyan-600/50 to-purple-600/20 text-white"
-                      : "text-white hover:bg-white/10"
-                  } transition-colors duration-300`}
-                  whileHover={{ x: 5 }}
-                >
-                  {link.name}
-                </motion.a>
+                 <ScrollLink
+            key={link.name}
+            to={link.to}
+            smooth={true}
+            duration={500}
+            offset={-70}
+            spy={true}
+            onClick={() => setActiveLink(link.name)}
+            className={`px-4 py-2 rounded-full cursor-pointer ${
+              activeLink === link.name
+                ? "bg-gradient-to-r from-cyan-600/50 to-purple-600/50 text-white"
+                : "text-white/80 hover:bg-white/10"
+            }`}
+          >
+            {link.name}
+          </ScrollLink>
               ))}
 
               {/* Resume Button in Mobile Menu */}
-              <div onClick={() => setMenuOpen(false)}>
+              <div className="mx-auto" onClick={() => setMenuOpen(false)}>
                 <ResumeButton />
               </div>
             </div>

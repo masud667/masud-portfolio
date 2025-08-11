@@ -35,7 +35,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <div id="home" className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating bubbles */}
