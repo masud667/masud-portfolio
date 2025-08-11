@@ -1,50 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { FaBars, FaTimes, FaFileDownload } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import ResumeButton from "../ResumeButton";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  // Load theme from localStorage
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      setDarkMode(true);
-    }
-  }, []);
-
-  // Toggle theme function
-  const toggleTheme = () => {
-    const html = document.documentElement;
-    if (darkMode) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setDarkMode(false);
-    } else {
-      html.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setDarkMode(true);
-    }
-  };
+  const [activeLink, setActiveLink] = useState("Home");
 
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Toggle menu function
+  // Toggle menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -58,86 +32,79 @@ const Navbar = () => {
     { name: "Contact", href: "#" },
   ];
 
-  const downloadResume = () => {
-    const resumeUrl = "/resume.pdf";
-    const link = document.createElement("a");
-    link.href = resumeUrl;
-    link.download = "Masud_Parvaz_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "py-2 bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl shadow-lg"
-          : "py-4 bg-white/10 dark:bg-gray-900/10 backdrop-blur-md"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-400 ease-in-out ${
+        scrolled 
+          ? 'py-3 bg-gray-900/50 backdrop-blur-xl shadow-lg' 
+          : 'py-5 bg-transparent'
       }`}
-      style={{
-        background: darkMode
-          ? "rgba(15, 23, 42, 0.7)"
-          : "rgba(255, 255, 255, 0.7)",
-        borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-        boxShadow: "0 8px 32px rgba(31, 38, 135, 0.15)",
-      }}>
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        {/* Logo */}
+        {/* Logo with animated gradient */}
         <motion.a
           href="#"
-          className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 select-none"
+          className="text-2xl font-bold select-none flex items-center"
           whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}>
-          Masud<span className="text-gray-600 dark:text-gray-300">.Dev</span>
+          whileTap={{ scale: 0.95 }}
+        >
+          <div className="relative">
+            <div className="bg-gradient-to-r from-cyan-600 to-purple-600 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+              <span className="text-white font-bold">M</span>
+            </div>
+            <motion.div
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-600 to-purple-600 opacity-0"
+              animate={{ opacity: [0, 0.8, 0] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+          </div>
+          <div>
+            <span className="text-cyan-600">MASUD</span>
+          </div>
         </motion.a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-1">
-          <div className="bg-gray-200/30 dark:bg-gray-800/30 backdrop-blur-md rounded-full p-1">
+          <div 
+            className="bg-gray-800/50 backdrop-blur-md rounded-full p-3"
+            style={{
+              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+              border: "1px solid rgba(255, 255, 255, 0.3)"
+            }}
+          >
             {navLinks.map((link) => (
               <motion.a
                 key={link.name}
                 href={link.href}
-                className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-indigo-100/50 dark:hover:bg-indigo-900/30 transition-colors duration-300"
+                className={`px-6 py-3 p-1 rounded-full text-sm font-medium ${
+                  activeLink === link.name
+                    ? "bg-gradient-to-r from-cyan-600/50 to-purple-600/50 text-white"
+                    : "text-white/90 hover:bg-white/5"
+                } transition-colors duration-300`}
                 whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}>
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActiveLink(link.name)}
+              >
                 {link.name}
               </motion.a>
             ))}
           </div>
 
           {/* Resume Button */}
-          <motion.button
-            onClick={downloadResume}
-            className="ml-4 px-5 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium text-sm flex items-center space-x-2"
-            whileHover={{
-              scale: 1.05,
-              background: "linear-gradient(to right, #7c3aed, #8b5cf6)",
-            }}
-            whileTap={{ scale: 0.95 }}>
-            <FaFileDownload />
-            <span>Resume</span>
-          </motion.button>
+          <ResumeButton />
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center space-x-4">
+        <div className="md:hidden flex items-center">
           <motion.button
-            onClick={downloadResume}
-            className="p-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white"
+            onClick={toggleMenu}
+            className="p-2 rounded-md text-white bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 transition-colors duration-300 focus:outline-none"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            aria-label="Download Resume">
-            <FaFileDownload size={18} />
-          </motion.button>
-
-          <button
-            onClick={toggleMenu}
-            className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-indigo-600 hover:text-white transition-colors duration-300 focus:outline-none"
-            aria-label="Toggle Menu">
+            aria-label="Toggle Menu"
+          >
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-          </button>
+          </motion.button>
         </div>
       </div>
 
@@ -149,33 +116,36 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl overflow-hidden"
+            className="md:hidden bg-gray-900/50 backdrop-blur-xl overflow-hidden"
             style={{
-              borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+              borderTop: "1px solid rgba(255, 255, 255, 0.2)",
               boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
-            }}>
+            }}
+          >
             <div className="flex flex-col space-y-2 px-4 py-4">
               {navLinks.map((link) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="py-3 px-4 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-indigo-100/50 dark:hover:bg-indigo-900/30 transition-colors duration-300"
-                  whileHover={{ x: 5 }}>
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setActiveLink(link.name);
+                  }}
+                  className={`py-3 px-4 rounded-lg ${
+                    activeLink === link.name
+                      ? "bg-gradient-to-r from-cyan-600/50 to-purple-600/20 text-white"
+                      : "text-white hover:bg-white/10"
+                  } transition-colors duration-300`}
+                  whileHover={{ x: 5 }}
+                >
                   {link.name}
                 </motion.a>
               ))}
 
-              <motion.button
-                onClick={() => {
-                  downloadResume();
-                  setMenuOpen(false);
-                }}
-                className="mt-2 py-3 px-4 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium flex items-center justify-center space-x-2"
-                whileHover={{ scale: 1.02 }}>
-                <FaFileDownload />
-                <span>Download Resume</span>
-              </motion.button>
+              {/* Resume Button in Mobile Menu */}
+              <div onClick={() => setMenuOpen(false)}>
+                <ResumeButton />
+              </div>
             </div>
           </motion.div>
         )}

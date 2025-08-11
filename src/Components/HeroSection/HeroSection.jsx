@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown } from 'react-icons/fa';
 import { DiMongodb, DiNodejs, DiReact, DiJavascript, DiHtml5, DiCss3 } from 'react-icons/di';
 import { SiExpress, SiTypescript, SiRedux, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
+import ResumeButton from '../ResumeButton';
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -108,7 +109,7 @@ const HeroSection = () => {
           >
             <div className="inline-block px-4 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
               <motion.span 
-                className="text-cyan-400"
+                className="text-cyan-300"
                 animate={{ opacity: [0.6, 1, 0.6] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
@@ -118,13 +119,13 @@ const HeroSection = () => {
           </motion.div>
           
           <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+            className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Crafting <span className="text-cyan-400">Digital Experiences</span><br />
-            with Modern Web Tech
+            Building <span className="text-cyan-400">Modern Engaging </span><br />
+            Web Experiences
           </motion.h1>
           
           <motion.p 
@@ -133,8 +134,8 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            I build responsive, high-performance web applications using cutting-edge technologies. 
-            Specializing in React ecosystems and full-stack JavaScript development.
+            I build responsive, high-performance web applications using latest technologies. 
+            Specializing in React ecosystems with MERN-stack development.
           </motion.p>
           
           <motion.div 
@@ -143,18 +144,12 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <motion.a 
-              href="#contact"
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-400/50 to-purple-600/50 font-medium flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Let's Connect
-            </motion.a>
+          
+            <ResumeButton />
             
             <motion.a 
               href="#projects"
-              className="px-8 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/10 font-medium flex items-center gap-2"
+              className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/10 font-medium flex items-center text-md gap-2 "
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -185,7 +180,7 @@ const HeroSection = () => {
                 repeatType: "reverse"
               }}
             >
-              <div className="text-cyan-400 text-5xl mb-2">Masud</div>
+              <div className="text-cyan-300 text-5xl mb-2">Masud</div>
               <div className="text-lg">MERN Stack Developer</div>
             </motion.div>
             
