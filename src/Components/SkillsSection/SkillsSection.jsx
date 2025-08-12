@@ -133,7 +133,7 @@ const SkillsSection = () => {
   };
 
   return (
-   <section id="skills" className='py-16 relative overflow-hidden skills-container'>
+   <section id="skills" className='py-16 relative overflow-hidden skills-container bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900'>
      <div className="w-10/12 mx-auto overflow-hidden ">
 
                {/* Mountain Silhouette top */}
