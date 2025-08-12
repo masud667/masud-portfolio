@@ -5,6 +5,7 @@ import GlassSocialBar from './Components/GlassSocialBar';
 import AboutMe from './Components/AboutMe/AboutMe';
 import SkillsSection from './Components/SkillsSection/SkillsSection';
 import Education from './Components/Education/Education';
+import ProjectsShowcase from './Components/Projects/ProjectsShowcase';
 
 const Root = () => {
     return (
@@ -15,6 +16,7 @@ const Root = () => {
             <AboutMe />
             <SkillsSection />
             <Education />
+            <ProjectsShowcase />
         </div>
     );
 };

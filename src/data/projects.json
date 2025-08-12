@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "Life Insurance Management Platform",
+    "description": "A secure role-based platform for managing life insurance policies, applications, and claims.",
+    "image": "https://i.ibb.co.com/RpNXYwFM/4.jpg",
+    "technologies": ["React", "TailwindCSS", "Firebase", "Express", "MongoDB", "JWT"],
+    "liveLink": "https://life-policy-pulse.web.app",
+    "githubLink": "https://github.com/username/life-insurance-platform",
+    "challenges": "Implementing role-based access control and secure policy claim management.",
+    "improvements": "Add AI-based premium estimation and automated claim verification.",
+    "features": [
+      "Role-based dashboards (Admin, Agent, Customer)",
+      "Policy management",
+      "Claim requests",
+      "Premium calculation"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "ZenTour Travel Booking App",
+    "description": "A modern travel booking platform with JWT authentication, booking management, and secure payments.",
+    "image": "zentour-booking-app",
+    "technologies": ["React", "TailwindCSS", "Firebase Auth", "Express", "MongoDB", "Stripe"],
+    "liveLink": "https://zen-tour.web.app/",
+    "githubLink": "https://github.com/masud667/zentour-client",
+    "challenges": "Integrating Stripe payments and JWT-based booking security.",
+    "improvements": "Add AI-powered travel recommendations and dynamic pricing.",
+    "features": [
+      "Secure user authentication",
+      "Tour packages",
+      "Booking management",
+      "Payment integration"
+    ]
+  },
+   {
+    "id": 3,
+    "title": "Freelance Task Marketplace",
+    "description":
+      "A platform connecting freelancers with clients for task posting, bidding, and secure project management.",
+    "image": "freelance-task-marketplace",
+    "technologies": ["React", "TailwindCSS", "Firebase", "Express", "MongoDB", "JWT"],
+    "liveLink": "https://freelance-task-marketpla-f462b.web.app/",
+    "githubLink": "https://github.com/username/freelance-task-marketplace",
+    "challenges":
+      "Implementing secure bidding and role-specific dashboards while maintaining fast performance.",
+    "improvements":
+      "Add integrated payment system and AI-based freelancer matching.",
+    "features": [
+      "Task posting & bidding",
+      "Role-based dashboards",
+      "Real-time notifications",
+      "Secure authentication",
+      "Task status tracking"
+    ]
+  }
+]
