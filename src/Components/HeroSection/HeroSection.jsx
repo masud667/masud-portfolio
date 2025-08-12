@@ -35,7 +35,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <div id="home" className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <div id="home" className="relative  w-full overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating bubbles */}
@@ -62,6 +62,11 @@ const HeroSection = () => {
           />
         ))}
         
+        {/* Mountain Silhouette */}
+        <div className="absolute bottom-0 left-0 w-full">
+          <div className="h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
+        </div>
+
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-10" />
         
@@ -94,7 +99,9 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-11/12 mx-auto px-4 py-24 md:py-32 flex flex-col md:flex-row items-center">
+      <div className="relative z-10 w-10/12 mx-auto px-4 py-24 md:py-32 flex flex-col md:flex-row items-center">
+       
+
         {/* Left side - Text content */}
         <motion.div 
           className="md:w-1/2 mb-16 md:mb-0"
@@ -107,7 +114,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <div className="inline-block px-4 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
+            <div className="inline-block px-6 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
               <motion.span 
                 className="text-cyan-300"
                 animate={{ opacity: [0.6, 1, 0.6] }}
@@ -139,7 +146,7 @@ const HeroSection = () => {
           </motion.p>
           
           <motion.div 
-            className="flex flex-wrap gap-4 mb-12"
+            className="flex flex-wrap gap-2 mb-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -149,7 +156,7 @@ const HeroSection = () => {
             
             <motion.a 
               href="#projects"
-              className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/10 font-medium flex items-center text-md gap-2 "
+              className="px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 font-medium flex items-center text-sm gap-2 "
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -160,7 +167,7 @@ const HeroSection = () => {
         
         {/* Right side - Animated tech stack */}
         <motion.div 
-          className="md:w-1/2 relative flex justify-center items-center"
+          className="w-1/2 relative flex justify-center items-center"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
@@ -227,15 +234,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
       
-      {/* Scroll indicator */}
-      <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      >
-        <span className="text-sm mb-2">Explore More</span>
-        <FaArrowDown className="text-cyan-400" />
-      </motion.div>
+      
     </div>
   );
 };

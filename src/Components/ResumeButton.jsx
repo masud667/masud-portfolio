@@ -18,7 +18,7 @@ const ResumeButton = () => {
       {/* Desktop Resume Button */}
       <motion.button
         onClick={downloadResume}
-        className="ml-4 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-600 to-purple-600 text-white font-medium text-md flex items-center space-x-2 "
+        className="px-5 py-3 rounded-full bg-gradient-to-r from-cyan-600 to-purple-600 text-white font-medium text-sm flex items-center space-x-2 "
         whileHover={{
           scale: 1.05,
           background: "linear-gradient(to right, #7c3aed, #8b5cf6)",

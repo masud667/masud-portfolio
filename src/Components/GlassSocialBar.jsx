@@ -35,7 +35,7 @@ const GlassSocialBar = () => {
       name: 'GitHub', 
       icon: <FaGithub className="h-3 w-3 md:h-5 md:w-5" />,
       url: 'https://github.com/masud667',
-      color: 'bg-gray-800'
+      color: 'bg-gray-700'
     },
     { 
       name: 'LinkedIn', 

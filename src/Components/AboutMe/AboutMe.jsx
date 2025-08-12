@@ -51,12 +51,22 @@ const AboutMe = () => {
 
   return (
     <section 
-      className="relative py-16 md:py-24 overflow-hidden"
+      className="relative  py-16 md:py-24 overflow-hidden"
       id="about"
       style={{
         background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)"
       }}
     >
+            {/* Mountain Silhouette top */}
+        <div className="absolute top-0 left-0 w-full">
+          <div className="h-24 bg-gradient-to-b from-gray-900 to-transparent"></div>
+        </div>
+      {/* Mountain Silhouette bottom */}
+        <div className="absolute bottom-0 left-0 w-full">
+          <div className="h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
+        </div>
+
+        
       {/* Parallax Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating circles */}
@@ -75,7 +85,7 @@ const AboutMe = () => {
       </div>
       
       {/* Content */}
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+      <div className="w-10/12 mx-auto  relative z-10">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             className="text-center mb-16"

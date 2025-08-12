@@ -40,10 +40,10 @@ const Navbar = () => {
           : 'py-5 bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="w-10/12 mx-auto  flex justify-between items-center">
         {/* Logo with animated gradient */}
         <motion.a
-          href="#"
+          href="home"
           className="text-2xl font-bold select-none flex items-center"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
