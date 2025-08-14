@@ -64,15 +64,16 @@ const ProjectsShowcase = () => {
   return (
     <section
       id="projects"
-      className="relative py-20  min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-      {/* Mountain Silhouette top */}
-      <div className="absolute top-0 left-0 w-full">
-        <div className="h-24 bg-gradient-to-b from-gray-900 to-transparent"></div>
-      </div>
-      {/* Mountain Silhouette bottom */}
-      <div className="absolute bottom-0 left-0 w-full">
-        <div className="h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
-      </div>
+      className="relative py-20  bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+   {/* Mountain Silhouette top */}
+        <div className="absolute top-0 left-0 w-full">
+          <div className="h-24 bg-gradient-to-b from-gray-900 to-transparent"></div>
+        </div>
+        {/* Mountain Silhouette bottom */}
+        <div className="absolute bottom-0 left-0 w-full">
+          <div className="h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
+        </div>
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
@@ -138,16 +139,12 @@ const ProjectsShowcase = () => {
               transition={{ duration: 0.3 }}
               layout>
               <div className="relative h-48 overflow-hidden">
-                <div className="bg-gradient-to-r from-cyan-900 to-purple-900 w-full h-full flex items-center justify-center">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                   
-                  />
+                <div className="bg-gradient-to-r from-cyan-900 to-purple-900 w-full h-full flex items-center justify-center text-gray-900">
+                  <img src={project.image} alt={project.title} />
                 </div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                  <h3 className="text-xl font-bold text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-400/60 to-transparent flex items-end p-6">
+                  <h3 className="text-xl font-bold text-gray-900">
                     {project.title}
                   </h3>
                 </div>

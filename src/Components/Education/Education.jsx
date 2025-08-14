@@ -69,11 +69,11 @@ const Education = () => {
       },
       {
         id: 3,
-        degree: "High School certification",
-        institution: "Science Academy",
-        year: "2014 - 2016",
+        degree: "SSC",
+        institution: "Char Jabbar Union High School",
+        year: "2017",
         description:
-          "Specialized in Physics and Mathematics. Achieved top 1% in national science olympiad.",
+          "Specialized in  Mathematics. Achieved top 1% in national science olympiad.",
         icon: <FaMedal />,
         score: "GPA: 4.0/4.0",
       },
@@ -81,7 +81,7 @@ const Education = () => {
     certifications: [
       {
         id: 1,
-        name: "MERN stack Developer",
+        name: "Web Development",
         issuer: "Programming Hero",
         year: "2025",
         icon: <SiGooglescholar />,
@@ -89,28 +89,28 @@ const Education = () => {
       },
       {
         id: 2,
-        name: "AWS Solutions Architect",
-        issuer: "Amazon Web Services",
-        year: "2023",
+        name: "CSS and Bootstrap",
+        issuer: "Udemy",
+        year: "2022",
         icon: <SiCoursera />,
-        credential: "Credential ID: AWS-SA-7890",
+        credential: "Credential ID: uc-430d4368-3b2c-49da-9b13-4fe229c9f9eb",
       },
       {
         id: 3,
-        name: "React Advanced Concepts",
-        issuer: "Meta",
-        year: "2021",
+        name: "Google Ads Apps Certification",
+        issuer: "Skillshop",
+        year: "2024",
         icon: <FaBook />,
-        credential: "Credential ID: REACT-ADV-2021",
+        credential: "Credential ID: 104294394",
       },
     ],
   };
   const gpaData = {
-    labels: ["High School", "Bachelor's"],
+    labels: ["High School","Collage", "Bachelor's"],
     datasets: [
       {
         label: "GPA Score",
-        data: [4.0, 3.08],
+        data: [4.18, 4.0, 3.08],
         backgroundColor: [
           "rgba(101, 116, 255, 0.8)",
           "rgba(101, 116, 255, 0.8)",
@@ -217,7 +217,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="relative py-16 px-4 md:px-8 min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+      className="relative py-20 px-4 md:px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
       {/* Mountain Silhouette top */}
       <div className="absolute top-0 left-0 w-full">
         <div className="h-24 bg-gradient-to-b from-gray-900 to-transparent"></div>
@@ -412,7 +412,7 @@ const Education = () => {
 
           {/* GPA Chart */}
           <motion.div
-            className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 shadow-xl h-76"
+            className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 shadow-xl "
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

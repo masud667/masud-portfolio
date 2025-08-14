@@ -6,6 +6,8 @@ import AboutMe from './Components/AboutMe/AboutMe';
 import SkillsSection from './Components/SkillsSection/SkillsSection';
 import Education from './Components/Education/Education';
 import ProjectsShowcase from './Components/Projects/ProjectsShowcase';
+import ContactForm from './Components/Contact/ContactForm';
+import Footer from './Components/Footer/Footer';
 
 const Root = () => {
     return (
@@ -17,6 +19,8 @@ const Root = () => {
             <SkillsSection />
             <Education />
             <ProjectsShowcase />
+            <ContactForm />
+            <Footer />
         </div>
     );
 };

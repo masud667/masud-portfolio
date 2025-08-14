@@ -3,10 +3,10 @@
     "id": 1,
     "title": "Life Insurance Management Platform",
     "description": "A secure role-based platform for managing life insurance policies, applications, and claims.",
-    "image": "https://i.ibb.co.com/RpNXYwFM/4.jpg",
+    "image": "https://i.ibb.co.com/1YrQB2Xh/life-policy-pulse.png",
     "technologies": ["React", "TailwindCSS", "Firebase", "Express", "MongoDB", "JWT"],
     "liveLink": "https://life-policy-pulse.web.app",
-    "githubLink": "https://github.com/username/life-insurance-platform",
+    "githubLink": "https://github.com/masud667/life-policy-pulse",
     "challenges": "Implementing role-based access control and secure policy claim management.",
     "improvements": "Add AI-based premium estimation and automated claim verification.",
     "features": [
@@ -20,7 +20,7 @@
     "id": 2,
     "title": "ZenTour Travel Booking App",
     "description": "A modern travel booking platform with JWT authentication, booking management, and secure payments.",
-    "image": "zentour-booking-app",
+    "image": "https://i.ibb.co.com/DH0WnQKv/zentour-booking-app.jpg",
     "technologies": ["React", "TailwindCSS", "Firebase Auth", "Express", "MongoDB", "Stripe"],
     "liveLink": "https://zen-tour.web.app/",
     "githubLink": "https://github.com/masud667/zentour-client",
@@ -38,10 +38,10 @@
     "title": "Freelance Task Marketplace",
     "description":
       "A platform connecting freelancers with clients for task posting, bidding, and secure project management.",
-    "image": "freelance-task-marketplace",
+    "image": "https://i.ibb.co.com/QvczzQyR/freelance-task-marketplace.jpg",
     "technologies": ["React", "TailwindCSS", "Firebase", "Express", "MongoDB", "JWT"],
     "liveLink": "https://freelance-task-marketpla-f462b.web.app/",
-    "githubLink": "https://github.com/username/freelance-task-marketplace",
+    "githubLink": "https://github.com/masud667/freelance-task-marketplace",
     "challenges":
       "Implementing secure bidding and role-specific dashboards while maintaining fast performance.",
     "improvements":
