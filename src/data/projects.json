@@ -6,7 +6,7 @@
     "image": "https://i.ibb.co.com/1YrQB2Xh/life-policy-pulse.png",
     "technologies": ["React", "TailwindCSS", "Firebase", "Express", "MongoDB", "JWT"],
     "liveLink": "https://life-policy-pulse.web.app",
-    "githubLink": "https://github.com/masud667/life-policy-pulse",
+    "githubLink": "https://github.com/masud667/life-policy-pulse-client",
     "challenges": "Implementing role-based access control and secure policy claim management.",
     "improvements": "Add AI-based premium estimation and automated claim verification.",
     "features": [
@@ -41,7 +41,7 @@
     "image": "https://i.ibb.co.com/QvczzQyR/freelance-task-marketplace.jpg",
     "technologies": ["React", "TailwindCSS", "Firebase", "Express", "MongoDB", "JWT"],
     "liveLink": "https://freelance-task-marketpla-f462b.web.app/",
-    "githubLink": "https://github.com/masud667/freelance-task-marketplace",
+    "githubLink": "https://github.com/masud667/freelance-task-marketplace-client",
     "challenges":
       "Implementing secure bidding and role-specific dashboards while maintaining fast performance.",
     "improvements":
